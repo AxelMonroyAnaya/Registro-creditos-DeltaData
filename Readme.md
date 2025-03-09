@@ -24,8 +24,9 @@ total de créditos otorgados.
 
 ### dado que la base de datos esta en la raiz no se necesitara mayor configuracion.
 ### correr el app.py que esta en la raiz de proyecto con 
-
-python app.py 
+    
+    ```bash
+    python app.py 
 
 ## consumir Apis 
 
