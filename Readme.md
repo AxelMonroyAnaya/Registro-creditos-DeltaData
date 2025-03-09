@@ -22,12 +22,14 @@ total de créditos otorgados.
 
 ## Correr el programa
 
-    dado que la base de datos esta en la raiz no se necesitara mayor configuracion.
-    correr el app.py que esta en la raiz de proyecto con python app.py 
+### dado que la base de datos esta en la raiz no se necesitara mayor configuracion.
+### correr el app.py que esta en la raiz de proyecto con 
+
+python app.py 
 
 ## consumir Apis 
 
-    ## Rutas de la API, Todas las apis estan configuradas con las urls para consumirlas via local host, si tu puerto es diferente unicamente se tiene que cambiar en la url
+### Rutas de la API, Todas las apis estan configuradas con las urls para consumirlas via local host, si tu puerto es diferente unicamente se tiene que cambiar en la url
 
 ### **1. Crear un crédito** (POST)
 - **Ruta**: `http://127.0.0.1:5000/apiCreate/api/crear`
