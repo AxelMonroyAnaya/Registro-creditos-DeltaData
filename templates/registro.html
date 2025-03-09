@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='/css/registro.css') }}"> {% endblock %}
+{% block title %}
+    registro
+{% endblock %}
+
+{% block content %}
+    {% if credito %}
+        <input type="number" id="id" name="id" value="{{ credito.0 }}" readonly>
+        <h2>Modificar Usuario:{{credito.1}} registrado {{credito.4}}</h2>
+    {% else %}
+        <h1>registro</h1>
+    {% endif %}
+    <form action="" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required {% if credito %}value="{{credito.1}}"{% endif %}>
+        <br><br>
+        <label for="monto">monto :</label>
+        <input type="number" step="any" min="0" id="monto" name="monto" required {% if credito %}value="{{credito.5}}"{% endif %}>
+        <br><br>
+        <label for="tasa de interes">tasa :</label>
+        <input type="number" step="any" min="0" id="tasa" name="tasa" required {% if credito %}value="{{credito.2}}"{% endif %}>
+        <br><br>
+        <label for="plazo">plazo en meses :</label>
+        <input type="number" min="0" id="plazo" name="plazo" required {% if credito %}value="{{credito.3}}"{% endif %}>
+        <br><br>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required {% if credito %}value="{{credito.4}}"{% endif %}>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+{% endblock %}

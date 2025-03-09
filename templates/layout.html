@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Aplicación{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/images.jfif') }}" type="image/png">
+    {% block style%} {% endblock %}
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index.index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('registrar.registro') }}">Registro</a></li>
+                <li><a href="{{ url_for('listar.lista') }}">listar</a></li>
+                <li><a href="{{ url_for('grafica.mostrar_grafica') }}">visualizacion de datos</a></li>
+            </ul>
+            <h1>&copy; Axel Alejandro Monroy Anaya Delta Data</h1>
+            <img  class ='logo'src="{{ url_for('static', filename='img/images.jfif')}}" alt="">
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy;Proyecto Flask Axel Alejandro Delta Data</p>
+    </footer>
+
+</body>
+</html>

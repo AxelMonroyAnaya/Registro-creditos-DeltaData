@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='/css/listar.css') }}">{% endblock %}
+{% block title %}
+    Listar
+{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message-alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    {% endwith %}
+
+    <h1>Lista de usuarios</h1>
+    <hr></hr>
+    {% for i in credito %}
+        <ul>
+            <h2>nombre del usuario : {{i.1}}</h2>
+            <li><h2>monto : ${{i.2}}</h2></li>
+            <li><h2>plazo : {{i.3}} meses</h2></li>
+            <li><h2>fecha de otorgamiento : {{i.4}}</h2></li>
+            <li><h2>tasa de interes : {{i.5}}%</h2></li>
+            <a class = 'btn-eliminar' href = {{url_for('modificar.mod', id=i.0)}}> modificar<a>
+            <a class = 'btn-modificar' href = {{url_for('borr.borrar', id=i.0)}}> Eliminar<a>
+        </ul>
+    <hr></hr>
+    </br>
+    {% endfor %}
+{% endblock %}
